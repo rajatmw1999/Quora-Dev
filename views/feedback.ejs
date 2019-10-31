@@ -17,31 +17,33 @@
       </div>
         <ul class="nav navbar-nav">
           <li id="home"><a href="/users/<%=userid%>/cd/<%=code%>" ><i class="far fa-newspaper fa-2x nav-icons"></i>HOME</a></li>
-      <li id="about"><a target="_blank" href="https://socketio-chat-example.now.sh/"><i class="fas fa-user-friends fa-2x nav-icons"></i>DEV CHAT</a></li>
-          <li id="contact"><a href="/bored"><i class="fas fa-meh rolling-eyes fa-2x nav-icons"></i>I M BORED</a></li>
+        <li id="about"><a  target="_blank" href="https://socketio-chat-example.now.sh/"><i class="fas fa-user-friends fa-2x nav-icons"></i>DEV CHAT</a></li>
+          <li id="contact"><a href="/bored" target="_blank"><i class="fas fa-meh rolling-eyes fa-2x nav-icons"></i>I M BORED</a></li>
 
           <div class="mb-3 search-bar">
             <a href="/<%=userid%>/<%=code%>/feedback"><button class="btn btn-primary" style="margin-right:30px;" type="submit" name="button">Leave Feedback</button></a>
 
-  <!-- <input type="text" class="form-control s-bar" placeholder="Search QuoraF"> -->
-
 </div>
-<a href="/users/<%=userid%>/cd/<%=code%>/qna">  <button class="btn btn-small btn-danger" type="submit" name="qnabutton" align="right">Add / Answer Question</button></a>
+<a href="/users/<%=userid%>/cd/<%=code%>/qna" target="_blank">  <button class="btn btn-small btn-danger" type="submit" name="qnabutton" align="right">Add / Answer Question</button></a>
+
+
         </ul>
     </div>
   </nav>
+
   <body>
+<br><br>
+<h3 style="text-align:center">Blow your trumpet here!</h3>
+<br><br>
+<form class="" action="/<%=userid%>/<%=code%>/feedback/submit" method="post" style="text-align:center">
 
-
-    <br><br><br>
-    <h3 style="text-align:center">Q. <%=question.que%></h3>
-<div style="text-align:center">
-      <form class="" action="/users/<%=userid%>/cd/<%=code%>/<%=question._id%>/answered" method="post">
-        <textarea type="text" name="answercontent" rows="8" cols="80" placeholder="Enter your answer" required autofocus></textarea>
-        <br><br>
-        <button type="submit" class="btn btn-info" name="button">Submit</button>
-      </form>
-</div>
+<textarea name="data" rows="8" cols="80" placeholder="Your feedback is heartily welcome"></textarea>
+<br><br>
+<button type="submit" class="btn btn-success" name="button">Leave Feedback!</button>
+</form>
 
 <br><br>
-<%- include('partials/footer.ejs') -%>
+
+
+
+    <%- include('partials/footer.ejs') -%>

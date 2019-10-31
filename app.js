@@ -7,6 +7,7 @@ const request = require('request');
 const app= express();
 const mongoose = require('mongoose');
 const qna = require('./models/qna');
+const feedback = require('./models/feedback');
 
 var login_id;
 
@@ -311,6 +312,17 @@ app.post('/users/:userid/cd/:code/:questionid/answered', function(req,res){
   });
 });
 
+app.get('/:userid/:code/feedback',function(req,res){
+  res.render('feedback',{userid:req.params.userid, code:req.params.code});
+});
+
+app.post('/:userid/:code/feedback/submit',function(req,res){
+  feedback.create({
+    username:req.params.userid,
+    desc:req.body.data
+  });
+  res.redirect('/users/' + req.params.userid + '/cd/' + req.params.code + '/');
+});
 
 app.listen(process.env.PORT || 3000,function(){
   console.log('Server is running successfully on port 3000!');
