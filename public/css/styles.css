@@ -1,0 +1,106 @@
+.navbar{
+  background-color: White;
+  box-shadow: 0px 1px GREY;
+}
+
+.navbar-brand{
+  padding: 15px 60px;
+font-family: 'Lobster', cursive, 'Abril Fatface', cursive,'Cabin', sans-serif ;
+font-size:3.4rem;
+color: #A62104;
+}
+
+
+body{
+  background-color: #f5f5ef;
+}
+
+.search-bar{
+  padding-top: 10px;
+  padding-left: 40px;
+  border-radius: 10%;
+
+  display: inline-block;
+}
+
+.nav-icons{
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.whats-on-your-mind{
+  /* height: 50px; */
+  width: 700px;
+  margin: auto;
+}
+.woym-bar{
+  resize:vertical;
+  height: 300px;
+}
+
+.submit-article-button{
+  margin-top: 10px;
+}
+
+.author-input{
+  margin: 10px 100px;
+}
+
+
+.article-box{
+  background-color: WHITE;
+  width:700px;
+  margin:50px auto;
+  padding:10px;
+  border-radius: 1%;
+  box-shadow: 0.5px 0.5px 0.5px 0.5px GREY;
+}
+
+.article-heading{
+  margin-left: 40%;
+  margin-top: 5px;
+  font-size: 3rem;
+  font-weight: bold;
+}
+
+#author-name{
+  padding: 5px;
+}
+
+#article-content{
+  padding: 10px;
+}
+
+#signup-form{
+  padding:100px;
+  padding-left: 550px;
+  padding-right: 550px;
+}
+
+.logo{
+  font-family: 'Lobster', cursive, 'Abril Fatface', cursive,'Cabin', sans-serif ;
+  font-size:5rem;
+  font-weight: 400;
+  color: #A62104;
+}
+
+#error-login{
+  color:RED;
+  font-weight: bold;
+}
+.articles{
+  padding: 50px;
+}
+.stats{
+  color:purple;
+  padding: 2px;
+}
+
+.articlePageTopic{
+  padding: 20px;
+  margin-left: 40px;
+  margin-right: 100px;
+  color:black;
+  background-color: pink;
+  border-radius: 10px;
+}

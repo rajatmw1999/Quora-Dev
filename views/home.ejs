@@ -1,0 +1,123 @@
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Quora</title>
+  <meta charset="utf-8">
+  <link href="https://fonts.googleapis.com/css?family=Abril+Fatface|Cabin|Lobster&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+  <link rel="stylesheet" href="/css/styles.css">
+  <nav class="navbar">
+    <div class="container">
+      <div class="navbar-header">
+        <p class="navbar-brand">QuoraF</p>
+      </div>
+        <ul class="nav navbar-nav">
+          <li id="home"><a href="/users/<%=userid%>/cd/<%=code%>" ><i class="far fa-newspaper fa-2x nav-icons"></i>HOME</a></li>
+          <li id="about"><a href="/about"><i class="fas fa-user-friends fa-2x nav-icons"></i>GROUPS</a></li>
+          <li id="contact"><a href="/bored" target="_blank"><i class="fas fa-meh rolling-eyes fa-2x nav-icons"></i>I M BORED</a></li>
+
+          <div class="mb-3 search-bar">
+  <input type="text" class="form-control s-bar" placeholder="Search QuoraF">
+
+</div>
+<a href="/users/<%=userid%>/cd/<%=code%>/qna" target="_blank">  <button class="btn btn-small btn-danger" type="submit" name="qnabutton" align="right">Add / Answer Question</button></a>
+
+
+        </ul>
+    </div>
+  </nav>
+
+  <body>
+
+<form class="" action="/" method="post">
+  <div class="whats-on-your-mind mb-3">
+    <textarea type="text" class="form-control woym-bar" placeholder="What's on your mind!" name="content" required></textarea>
+    <button type="submit" class="btn btn-small btn-info submit-article-button" name="button" value="<%=userid%>">SUBMIT</button>
+    <input readonly type="text" class="author-input" maxlength="10" name="author" placeholder="Author : <%=userid%> ">
+    <input type="text"name="topic" placeholder="Topic of article" required>
+    <p><em>Logged in as : <%=userid%> </em></p>
+  </div>
+</form>
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-lg-3">
+      <h3>Explore</h3>
+      <a href="/users/<%=userid%>/cd/<%=code%>/latestnews" target="_blank">Check out the latest tech news. . .</a><br>
+      <a href="/users/<%=userid%>/cd/<%=code%>/qna" target="_blank">Answer some trending question. . .</a><br>
+      <a href="https://www.quora.com/profile/Rajat-Upadhyay-6" target="_blank">Explore the developers Quora profile. . .</a>
+      <h3>Our current users</h3>
+      <%  allNames.forEach(function(name){%>
+          <a href="#" target="_blank"><%=name.name%></a><br>
+        <%});%>
+        <h3>Stats</h3>
+        <div class="stats">
+          <p>Total articles : <%=displayArticles.length%></p>
+          <p>Total questions : <%=totalQ%></p>
+          <p>Total users : <%=allNames.length%></p>
+        </div>
+
+    </div>
+    <div class="col-lg-6">
+      <%  displayArticles.forEach(function(article){   %>
+        <div class="article-box">
+          <% var contentLength = article.content.length; %>
+          <h4 class="article-heading"><%=article.topic%></h4>
+        <p id="author-name"><i class="fa-2x fas fa-user-circle"></i> <em> <%=article.author%></em></p>
+          <p id="article-content">
+            <%if(contentLength>1000){%>
+            <%=article.content.substring(0,1000)%>...
+
+            <a href="/users/<%=userid%>/articles/<%=article._id%>/<%=code%>">Read More</a>
+          <%    }else{    %>
+            <%=article.content%>
+        <%  }   %>
+          </p>
+          <em><p id="author-name">Date Published : <%=article.date%></p></em>
+        </div>
+      <%    });   %>
+      </div>
+      <div class="col-lg-2" align="right">
+        <h4><b>Are you a developer?</b></h4>
+        <p>Leave your cool <b>project's link</b> or <b>repo's link</b> and we will display it here and show it to our audience to use!!</p>
+        <form class="" action="/projectUrl" method="post">
+          <input type="text" name="project" class="form-control" autocomplete="off" placeholder="Leave the link here">
+          <button type="submit" class="btn btn-small btn-info" value="<%=userid%>" name="button" style="margin:2px;">Display Me!</button>
+        </form>
+        <br><br>
+        <%projects.forEach(function(project){%>
+          <p><b>By : <%=project.author%></b></p>
+          <p>Project : <a href="<%=project.url%>" target="_blank"><%=project.url%></a></p>
+          <br>
+        <%});%>
+      </div>
+
+    </div>
+  </div>
+
+
+
+  </div>
+  <div class="footer-padding"></div>
+    <div class="footer">
+    </div>
+  </div>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+  <script type="text/javascript">
+  var countLike = 0;
+
+  $(".like").click(function(){
+    countLike+=1;
+    alert(countLike);
+  });
+  </script>
+<b><p style="text-align:center">Hand crafted by Rajat Upadhyay (Check out his <a target="_blank" href="https://www.quora.com/profile/Rajat-Upadhyay-6">Quora profile</a> )</p></b><br>
+
+  </body>
+  </html>

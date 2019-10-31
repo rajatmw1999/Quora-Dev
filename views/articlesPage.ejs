@@ -1,0 +1,42 @@
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Quora</title>
+  <meta charset="utf-8">
+  <link href="https://fonts.googleapis.com/css?family=Abril+Fatface|Cabin|Lobster&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+  <link rel="stylesheet" href="/css/styles.css">
+  <nav class="navbar">
+    <div class="container">
+      <div class="navbar-header">
+        <p class="navbar-brand">QuoraF</p>
+      </div>
+        <ul class="nav navbar-nav">
+          <li id="home"><a href="/users/<%=userid%>/cd/<%=code%>" ><i class="far fa-newspaper fa-2x nav-icons"></i>HOME</a></li>
+          <li id="about"><a href="/about"><i class="fas fa-user-friends fa-2x nav-icons"></i>GROUPS</a></li>
+          <li id="contact"><a href="/bored"><i class="fas fa-meh rolling-eyes fa-2x nav-icons"></i>I M BORED</a></li>
+
+          <div class="mb-3 search-bar">
+  <input type="text" class="form-control s-bar" placeholder="Search QuoraF">
+
+</div>
+<a href="/users/<%=userid%>/cd/<%=code%>/qna" target="_blank">  <button class="btn btn-small btn-danger" type="submit" name="qnabutton" align="right">Add / Answer Question</button></a>
+
+
+        </ul>
+    </div>
+  </nav>
+
+  <body>
+<div class="jumbotron articlePageTopic">
+  <h1><%=articleTopic%></h1>
+  <p id="articlePageContent"><%=articleContent%></p>
+
+
+</div>
+
+<%- include('partials/footer.ejs') -%>
